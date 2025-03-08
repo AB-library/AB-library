@@ -2,8 +2,10 @@ using dotenv.net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
-using NoteFlowAPI.Data;
+using ConspectFiles.Data;
 using System.Text;
+using ConspectFiles.Interface;
+using ConspectFiles.Repository;
 
 DotEnv.Load();
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
@@ -29,6 +31,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();
+
+builder.Services.AddScoped<IConspectRepository, ConspectRepository>();
 
 var app = builder.Build();
 
