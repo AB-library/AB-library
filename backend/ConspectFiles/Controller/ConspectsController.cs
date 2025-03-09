@@ -9,10 +9,11 @@ using ConspectFiles.Interface;
 using System.Net.Http.Headers;
 using MongoDB.Driver;
 using ConspectFiles.Mapper;
+using ConspectFiles.Dto;
 
 namespace ConspectFiles.Controller
 {
-    [Route("conspect/conspects")]
+    [Route("conspectFiles/conspects")]
     [ApiController]
     public class ConspectsController : ControllerBase
     {
@@ -31,8 +32,8 @@ namespace ConspectFiles.Controller
             return Ok(conspectDto);
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        [HttpGet("{id:string}")]
+        public async Task<IActionResult> GetById([FromRoute] string id)
         {
             var conspect = await _conspectRepo.GetById(id);
             if(conspect == null)
@@ -43,6 +44,36 @@ namespace ConspectFiles.Controller
             return Ok(conspect.ToConspectDto());
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateConspectDto conspectDto)
+        {
+            var conspect = conspectDto.ToConspectFromCreateDto();
+            await _conspectRepo.Create(conspect);
+             return CreatedAtAction(nameof(GetById), new { id = conspect.Id }, conspect.ToConspectDto());
+        }
+
+        [HttpPut("{string:id}")]
+        public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateConspectDto conspectDto)
+        {
+            var conspect = await _conspectRepo.Update(id, conspectDto);
+            if(conspect == null)
+            {
+                return NotFound();
+            }
+            return Ok(conspect.ToConspectDto());
+        }
+
+        [HttpDelete("{string:id}")]
+
+        public async Task<IActionResult> Delete([FromRoute] string id)
+        {
+            var conspect = await _conspectRepo.Delete(id);
+            if(conspect == null)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
 
         
     }

@@ -15,5 +15,14 @@ namespace ConspectFiles.Mapper
                 CreatedOn = conspectModel.CreatedOn
             };
         }
+
+        public static Conspect ToConspectFromCreateDto(this CreateConspectDto conspectDto)
+        {
+            return new Conspect
+            {
+                Title = conspectDto.Title,
+                Content = conspectDto.Content
+            };
+        }
     }
 }

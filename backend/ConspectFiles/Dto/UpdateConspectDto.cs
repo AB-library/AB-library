@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace ConspectFiles.Dto
 {
-    public class ConspectDto
+    public class UpdateConspectDto
     {
-        public string? Id { get; set; }
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }= string.Empty;
         public string Content { get; set; } = string.Empty;
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
     }
 }
