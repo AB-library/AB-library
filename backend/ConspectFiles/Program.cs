@@ -33,6 +33,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IConspectRepository, ConspectRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
@@ -41,7 +42,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.MapGet("/", () =>
 {
