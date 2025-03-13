@@ -8,10 +8,21 @@ using ConspectFiles.Interface;
 using ConspectFiles.Repository;
 using ConspectFiles.Model;
 
-DotEnv.Load();
+DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {"..\\.env"}));
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
 
+Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
+Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
+Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddControllers();
+
+builder.Services.AddControllers();
 
 builder.Services.AddSingleton<MongoDbService>();
 
@@ -45,12 +56,14 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IConspectRepository, ConspectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+app.UseDeveloperExceptionPage();
 
 // app.UseHttpsRedirection();
 
@@ -62,5 +75,6 @@ app.MapGet("/", () =>
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapControllers();
 
 app.Run();

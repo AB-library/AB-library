@@ -28,17 +28,16 @@ namespace ConspectFiles.Controller
             _userRepo = userRepo;
         }
 
-        [HttpPost("register")]
+        [HttpPost]
 
-        public async Task<IActionResult> Registration(RegisterDto newUser)
+        public async Task<IActionResult> Registration([FromBody] RegisterDto newUser)
         {
             var UserModel = await _userRepo.CreateAsync(newUser);
             if(UserModel == null)
             {
                 return NotFound();
             }
-            
-            return Ok(newUser);
+            return Ok(UserModel);
 
         }
         [HttpGet]
@@ -47,6 +46,9 @@ namespace ConspectFiles.Controller
             var users = await _userRepo.GetAllAsync();
             return Ok(users);
         }
+
+
+        
         
     }
 }
