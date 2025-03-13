@@ -13,5 +13,6 @@ namespace ConspectFiles.Interface
     {
         Task<AppUser> LoginAsync(LoginDto login);
         Task<AppUser?> CreateAsync(RegisterDto register);
+        Task<List<AppUser>> GetAllAsync();
     }
 }

@@ -6,6 +6,7 @@ using ConspectFiles.Data;
 using System.Text;
 using ConspectFiles.Interface;
 using ConspectFiles.Repository;
+using ConspectFiles.Model;
 
 DotEnv.Load();
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
@@ -13,6 +14,12 @@ var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build()
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<MongoDbService>();
+
+builder.Services.AddSingleton<IMongoCollection<AppUser>>(sp =>
+{
+    var database = sp.GetRequiredService<MongoDbService>().Database;
+    return database.GetCollection<AppUser>("users");
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -28,6 +35,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT_SECRET"]))
         };
     });
+Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
+Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
+Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
 
 builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();

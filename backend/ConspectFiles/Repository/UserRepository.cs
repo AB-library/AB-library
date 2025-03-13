@@ -27,8 +27,8 @@ namespace ConspectFiles.Repository
 
         public async Task<AppUser?> CreateAsync(RegisterDto register)
         {
-            var existUser = await _users.FindAsync(u => 
-            u.UserName == register.UserName);
+            var existUser = await _users.Find(u => 
+            u.UserName == register.UserName).FirstOrDefaultAsync();
             if(existUser != null)
             {
                 return null;
@@ -42,6 +42,11 @@ namespace ConspectFiles.Repository
             };
             await _users.InsertOneAsync(newUser);
             return newUser;
+        }
+
+        public async Task<List<AppUser>> GetAllAsync()
+        {
+            return await _users.Find(_ => true).ToListAsync();
         }
 
         public Task<AppUser> LoginAsync(LoginDto login)

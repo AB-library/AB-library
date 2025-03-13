@@ -41,6 +41,12 @@ namespace ConspectFiles.Controller
             return Ok(newUser);
 
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var users = await _userRepo.GetAllAsync();
+            return Ok(users);
+        }
         
     }
 }
