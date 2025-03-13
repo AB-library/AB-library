@@ -57,6 +57,7 @@ namespace ConspectFiles.Repository
             }
             conspect.Title = conspectDto.Title;
             conspect.Content = conspectDto.Content;
+            await _database.Conspects.ReplaceOneAsync(c => c.Id == id, conspect);
             return conspect;
         }
     }

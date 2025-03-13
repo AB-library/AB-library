@@ -9,8 +9,8 @@ namespace ConspectFiles.Data
         private readonly IMongoDatabase _database;
         public MongoDbService(IConfiguration configuration)
         {
-            _client = new MongoClient(configuration["mongodb+srv://st9165305:23C4B3_qwerty@cluster0.ial8y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"]);
-            _database = _client.GetDatabase(configuration["AB library(DB)"]);
+            _client = new MongoClient(configuration["MONGO_CONNECTION_STRING"]);
+            _database = _client.GetDatabase(configuration["MONGO_DATABASE_NAME"]);
         }
 
         public IMongoDatabase Database => _database;

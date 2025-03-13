@@ -32,7 +32,7 @@ namespace ConspectFiles.Controller
             return Ok(conspectDto);
         }
 
-        [HttpGet("{id:string}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] string id)
         {
             var conspect = await _conspectRepo.GetById(id);
@@ -52,7 +52,7 @@ namespace ConspectFiles.Controller
              return CreatedAtAction(nameof(GetById), new { id = conspect.Id }, conspect.ToConspectDto());
         }
 
-        [HttpPut("{string:id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateConspectDto conspectDto)
         {
             var conspect = await _conspectRepo.Update(id, conspectDto);
@@ -63,7 +63,7 @@ namespace ConspectFiles.Controller
             return Ok(conspect.ToConspectDto());
         }
 
-        [HttpDelete("{string:id}")]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
