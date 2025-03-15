@@ -11,9 +11,6 @@ using ConspectFiles.Model;
 DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {"..\\.env"}));
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
 
-Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
-Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
-Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
 
 
 
@@ -46,9 +43,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT_SECRET"]))
         };
     });
-Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
-Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
-Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
 
 builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();

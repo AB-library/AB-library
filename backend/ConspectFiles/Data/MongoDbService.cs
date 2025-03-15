@@ -14,7 +14,7 @@ namespace ConspectFiles.Data
             _database = _client.GetDatabase(configuration["MONGO_DATABASE_NAME"]);
             _users = _database.GetCollection<AppUser>("users");
         }
-
+        
         public IMongoDatabase Database => _database;
         public IMongoCollection<Conspect> Conspects => _database.GetCollection<Conspect>("Conspects");
     }

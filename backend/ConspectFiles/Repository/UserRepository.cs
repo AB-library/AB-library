@@ -10,6 +10,7 @@ using MongoDB.Bson;
 using System.Security.Authentication;
 using System.Security.Cryptography;
 using BCrypt.Net;
+using System.Runtime.CompilerServices;
 
 
 namespace ConspectFiles.Repository
@@ -23,6 +24,23 @@ namespace ConspectFiles.Repository
         {
             _database = database;
             _users = users;
+        }
+
+        public async Task<AppUser?> AuthenticateAsync(LoginDto loginDto)
+        {
+            var userModel = await _users.Find(u => u.UserName == loginDto.UserName).FirstOrDefaultAsync();
+            
+            if(userModel == null)
+            {
+                return null;
+            }
+
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginDto.PasswordHash, userModel.PasswordHash);
+            if(!isPasswordValid)
+            {
+                return null;
+            }
+            return userModel;
         }
 
         public async Task<AppUser?> CreateAsync(RegisterDto register)
@@ -44,16 +62,34 @@ namespace ConspectFiles.Repository
             return newUser;
         }
 
+        public async Task<AppUser?> DeleteAsync(string Userid)
+        {
+            var userModel = await _users.Find(u =>
+            u.Id == Userid).FirstOrDefaultAsync();
+            if(userModel == null)
+            {
+                return null;
+            }
+            await _users.DeleteOneAsync(user => user.Id == Userid);
+            return userModel;
+            
+        }
+
         public async Task<List<AppUser>> GetAllAsync()
         {
             return await _users.Find(_ => true).ToListAsync();
         }
 
-        public Task<AppUser> LoginAsync(LoginDto login)
+        public async Task<AppUser?> GetByIdAsync(string id)
+        {
+            var userModel = await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
+            if(userModel == null) return null;
+            return userModel;
+        }
+
+        public Task<AppUser?> LoginAsync(LoginDto login)
         {
             throw new NotImplementedException();
         }
-
-        
     }
 }

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Bson;
@@ -13,7 +15,11 @@ namespace ConspectFiles.Model
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id {get; set;}
+        
+       
         public string UserName {get; set;} = string.Empty;
+        
+       
         public string PasswordHash {get; set;} = string.Empty;
 
     }
