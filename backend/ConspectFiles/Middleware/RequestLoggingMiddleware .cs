@@ -18,9 +18,24 @@ namespace ConspectFiles.Middleware
         }
         public async Task Invoke(HttpContext context)
         {
-            _logger.LogInformation($"Request: {context.Request.Method} {context.Request.Path}");
-            await _next(context);
-            _logger.LogInformation($"Status: {context.Response.StatusCode}");
+            try
+            {
+                _logger.LogInformation($"Request: {context.Request.Method} {context.Request.Path}");
+
+                await _next(context);
+
+                _logger.LogInformation($"Status: {context.Response.StatusCode}");
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "An unhandled exception occurred");
+                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsJsonAsync(new{
+                    error = "Internal Server Error",
+                    details = ex.Message
+                });
+            }
         }
     }
 }

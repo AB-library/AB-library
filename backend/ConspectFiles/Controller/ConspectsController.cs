@@ -35,6 +35,11 @@ namespace ConspectFiles.Controller
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] string id)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var conspect = await _conspectRepo.GetById(id);
             if(conspect == null)
             {
@@ -55,6 +60,11 @@ namespace ConspectFiles.Controller
         [HttpPut("{id}")]
         public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateConspectDto conspectDto)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             var conspect = await _conspectRepo.Update(id, conspectDto);
             if(conspect == null)
             {
@@ -67,6 +77,11 @@ namespace ConspectFiles.Controller
 
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var conspect = await _conspectRepo.Delete(id);
             if(conspect == null)
             {

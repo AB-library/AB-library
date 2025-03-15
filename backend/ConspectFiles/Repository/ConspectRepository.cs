@@ -15,42 +15,78 @@ namespace ConspectFiles.Repository
     public class ConspectRepository : IConspectRepository
     {
         private readonly MongoDbService _database;
+        private readonly ILogger<ConspectRepository> _logger;
 
-        public ConspectRepository(MongoDbService database)
+        public ConspectRepository(MongoDbService database, ILogger<ConspectRepository> logger)
         {
             _database = database;
+            _logger = logger;
         }
 
         public async Task<Conspect?> Create(Conspect conspectModel)
         {
-            await _database.Conspects.InsertOneAsync(conspectModel);
-            return conspectModel;
+            try
+            {
+                await _database.Conspects.InsertOneAsync(conspectModel);
+                return conspectModel;
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error while creating conspect");
+                return null;
+            }
         }
 
         public async Task<Conspect?> Delete(string id)
         {
-            var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
-            if(conspect == null)
+            try
             {
+                var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+                if(conspect == null)
+                {
+                    return null;
+                }
+                await _database.Conspects.DeleteOneAsync(c=>c.Id == id);
+                return conspect;
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error while deleting conspect dy Id");
                 return null;
             }
-            await _database.Conspects.DeleteOneAsync(c=>c.Id == id);
-            return conspect;
         }
 
         public async Task<List<Conspect>> GetAll()
         {
-            return await _database.Conspects.Find(_ => true).ToListAsync();
+            try
+            {
+                return await _database.Conspects.Find(_ => true).ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error while retrieving all conspects");
+                return new List<Conspect>();
+            }
         }
 
         public async Task<Conspect?> GetById(string id)
         {
-            return await  _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+            try
+            {
+                return await  _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error while retrieving conspect by Id");
+                return null;
+            }
         }
 
         public async Task<Conspect?> Update(string id, UpdateConspectDto conspectDto)
         {
-            var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+            try
+            {
+               var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
             if(conspect == null)
             {
                 return null;
@@ -58,7 +94,13 @@ namespace ConspectFiles.Repository
             conspect.Title = conspectDto.Title;
             conspect.Content = conspectDto.Content;
             await _database.Conspects.ReplaceOneAsync(c => c.Id == id, conspect);
-            return conspect;
+            return conspect; 
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Error while updatind conspect by Id");
+                return null;
+            }
         }
     }
 }
