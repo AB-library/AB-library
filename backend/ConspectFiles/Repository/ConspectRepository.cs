@@ -8,6 +8,7 @@ using ConspectFiles.Model;
 using MongoDB.Driver;
 using ConspectFiles.Dto;
 using Microsoft.AspNetCore.Http.HttpResults;
+using ConspectFiles.Helpers;
 
 
 namespace ConspectFiles.Repository
@@ -56,11 +57,18 @@ namespace ConspectFiles.Repository
             }
         }
 
-        public async Task<List<Conspect>> GetAll()
+        public async Task<List<Conspect>> GetAll(QueryObject query)
         {
             try
             {
-                return await _database.Conspects.Find(_ => true).ToListAsync();
+                var filter = Builders<Conspect>.Filter.Empty;
+
+                if (!string.IsNullOrEmpty(query.Title))
+                {
+                    filter = Builders<Conspect>.Filter.Eq(c => c.Title, query.Title);
+                }
+
+                return await _database.Conspects.Find(filter).ToListAsync();
             }
             catch(Exception ex)
             {

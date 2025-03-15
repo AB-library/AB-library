@@ -10,6 +10,7 @@ using System.Net.Http.Headers;
 using MongoDB.Driver;
 using ConspectFiles.Mapper;
 using ConspectFiles.Dto;
+using ConspectFiles.Helpers;
 
 namespace ConspectFiles.Controller
 {
@@ -25,9 +26,9 @@ namespace ConspectFiles.Controller
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
         {
-            var conspect = await _conspectRepo.GetAll();
+            var conspect = await _conspectRepo.GetAll(query);
             var conspectDto = conspect.Select(c=>c.ToConspectDto()); 
             return Ok(conspectDto);
         }
