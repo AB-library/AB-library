@@ -1,0 +1,47 @@
+# .NET Core
+bin/
+obj/
+out/
+
+# ASP.NET Core
+wwwroot/
+*.vspscc
+.vs/
+
+# User-specific files
+.vscode/
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer patch files
+*.patch
+
+# JetBrains Rider
+.idea/
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# .NET Core and Visual Studio for Mac
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# NPM
+node_modules/
+
+# Generated files
+*.generated.cs
+
+# DotCover
+.idea/dotCover
+
+# Azure Functions
+local.settings.json
