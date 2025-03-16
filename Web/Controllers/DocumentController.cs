@@ -48,4 +48,21 @@ public class DocumentController : ControllerBase {
             return NotFound();
         return NoContent();
     }
+    
+    [HttpGet("search")]
+    public async Task<IActionResult> FilterSearch([FromQuery] string query) {
+        List<DocumentDTO> results = await _documentService.Search(query);
+        return Ok(results);
+    }
+
+    [HttpGet("filterSerach")]
+    public async Task<IActionResult> Search(
+        [FromQuery] string? query,
+        [FromQuery] List<string>? categories,
+        [FromQuery] DateTime? createdAfter,
+        [FromQuery] DateTime? createdBefore) {
+
+        var results = await _documentService.FilterSearch(query, categories, createdAfter, createdBefore);
+        return Ok(results);
+    }
 }

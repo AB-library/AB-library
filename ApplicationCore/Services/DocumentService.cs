@@ -77,4 +77,26 @@ public class DocumentService {
         await _repository.DeleteByIdAsync(id);
         return true;
     }
+    
+    public async Task<List<DocumentDTO>> Search(string query) {
+        var documents = await _repository.SearchAsync(query);
+        return documents.Select(d => new DocumentDTO {
+            Id = d.Id,
+            Title = d.Title,
+            Content = d.Content,
+            Categories = d.Categories,
+            CreatedOn = d.CreatedOn
+        }).ToList();
+    }
+    
+    public async Task<List<DocumentDTO>> FilterSearch(string? query, List<string>? categories, DateTime? createdAfter, DateTime? createdBefore) {
+        var documents = await _repository.FilterSearchAsync(query, categories, createdAfter, createdBefore);
+        return documents.Select(d => new DocumentDTO {
+            Id = d.Id,
+            Title = d.Title,
+            Content = d.Content,
+            Categories = d.Categories,
+            CreatedOn = d.CreatedOn
+        }).ToList();
+    }
 }

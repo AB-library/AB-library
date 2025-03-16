@@ -13,6 +13,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope()) {
+    var documentRepository = scope.ServiceProvider.GetRequiredService<DocumentRepository>();
+    await documentRepository.EnsureIndexesAsync();
+}
+
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
