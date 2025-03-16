@@ -1,0 +1,6 @@
+@ABLibraryAPI_HostAddress = http://localhost:5152
+
+GET {{ABLibraryAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
