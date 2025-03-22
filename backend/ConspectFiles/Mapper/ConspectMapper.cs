@@ -12,6 +12,7 @@ namespace ConspectFiles.Mapper
                 Id = conspectModel.Id,
                 Title = conspectModel.Title,
                 Content = conspectModel.Content,
+                Tag = conspectModel.Tag,
                 CreatedOn = conspectModel.CreatedOn
             };
         }
@@ -21,7 +22,8 @@ namespace ConspectFiles.Mapper
             return new Conspect
             {
                 Title = conspectDto.Title,
-                Content = conspectDto.Content
+                Content = conspectDto.Content,
+                Tag = conspectDto.Tag
             };
         }
     }

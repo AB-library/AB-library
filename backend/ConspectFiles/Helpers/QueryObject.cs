@@ -8,5 +8,6 @@ namespace ConspectFiles.Helpers
     public class QueryObject
     {
         public string? Title { get; set; } = null;
+        public string? Tag { get; set; } = null;
     }
 }

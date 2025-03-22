@@ -16,5 +16,10 @@ namespace ConspectFiles.Dto
         [MinLength(5, ErrorMessage = "Content must be 5 characters")]
         [MaxLength(280, ErrorMessage ="Content can not be over 280 characters")]
         public string Content { get; set; } = string.Empty;
+        [Required]
+        [MinLength(2, ErrorMessage = "Tag must be 2 characters")]
+        [MaxLength(20, ErrorMessage ="Tag can not be over 20 characters")]
+        public string Tag { get; set; } = string.Empty;
+
     }
 }

@@ -67,6 +67,10 @@ namespace ConspectFiles.Repository
                 {
                     filter = Builders<Conspect>.Filter.Eq(c => c.Title, query.Title);
                 }
+                if (!string.IsNullOrEmpty(query.Tag))
+                {
+                    filter = Builders<Conspect>.Filter.Eq(c => c.Tag, query.Tag);
+                }
 
                 return await _database.Conspects.Find(filter).ToListAsync();
             }
@@ -101,6 +105,7 @@ namespace ConspectFiles.Repository
             }
             conspect.Title = conspectDto.Title;
             conspect.Content = conspectDto.Content;
+            conspect.Tag = conspectDto.Tag;
             await _database.Conspects.ReplaceOneAsync(c => c.Id == id, conspect);
             return conspect; 
             }
