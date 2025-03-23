@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ConspectFiles.Dto.CommentDTO;
 
 namespace ConspectFiles.Dto
 {
@@ -12,5 +13,6 @@ namespace ConspectFiles.Dto
         public string Content { get; set; } = string.Empty;
         public string Tag { get; set; } = string.Empty;
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public List<CommentDto> Comments{get; set;} = new();
     }
 }

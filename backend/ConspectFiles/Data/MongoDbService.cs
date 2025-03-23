@@ -15,5 +15,6 @@ namespace ConspectFiles.Data
 
         public IMongoDatabase Database => _database;
         public IMongoCollection<Conspect> Conspects => _database.GetCollection<Conspect>("Conspects");
+        public IMongoCollection<Comment> Comments => _database.GetCollection<Comment>("Comments");
     }
 }

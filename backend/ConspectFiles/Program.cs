@@ -48,6 +48,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IConspectRepository, ConspectRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 var app = builder.Build();
 

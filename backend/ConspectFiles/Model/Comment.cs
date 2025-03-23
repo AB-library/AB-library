@@ -7,19 +7,26 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ConspectFiles.Model
 {
-    public class Conspect
+    public class Comment
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        [BsonElement("_id")]
         public string Id { get; set; } = string.Empty;
-        public string Title { get; set; } = string.Empty;
+        
+        
+        [BsonElement("authorName")]
+        public string AuthorName { get; set; } = string.Empty;
+        
+        [BsonElement("content")]
         public string Content { get; set; } = string.Empty;
-        public string Tag { get; set; } = string.Empty;
-
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        
+        [BsonElement("createdOn")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
         public DateTime CreatedOn { get; set; } = DateTime.Now;
-        public List<Comment> Comments = new List<Comment>();
-
+        
+        [BsonElement("conspectId")]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string ConspectId { get; set; } = string.Empty;
+        
     }
 }

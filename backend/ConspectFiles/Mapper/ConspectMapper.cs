@@ -13,7 +13,8 @@ namespace ConspectFiles.Mapper
                 Title = conspectModel.Title,
                 Content = conspectModel.Content,
                 Tag = conspectModel.Tag,
-                CreatedOn = conspectModel.CreatedOn
+                CreatedOn = conspectModel.CreatedOn,
+                Comments = conspectModel.Comments.Select(c=>c.ToCommentDto()).ToList()
             };
         }
 
