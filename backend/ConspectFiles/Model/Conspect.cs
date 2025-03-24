@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace ConspectFiles.Model
 {
@@ -20,6 +21,6 @@ namespace ConspectFiles.Model
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public List<Comment> Comments = new List<Comment>();
-
+        internal static RenderArgs<Conspect> DocumentSerializer;
     }
 }

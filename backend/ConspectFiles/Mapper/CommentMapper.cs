@@ -20,5 +20,15 @@ namespace ConspectFiles.Mapper
                 ConspectId = commentModel.ConspectId
             };
         }
+        public static Comment ToCommentFromCreateDto(this CreateCommentDto commentModel, string conspectId)
+        {
+            return new Comment
+            {
+                AuthorName = commentModel.AuthorName,
+                Content = commentModel.Content,
+                ConspectId = conspectId
+            };
+
+        }
     }
 }

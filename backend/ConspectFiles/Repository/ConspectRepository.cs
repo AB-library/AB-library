@@ -65,34 +65,52 @@ namespace ConspectFiles.Repository
 
                 if (!string.IsNullOrEmpty(query.Title))
                 {
-                    filter = Builders<Conspect>.Filter.Eq(c => c.Title, query.Title);
+                    filter = filter & Builders<Conspect>.Filter.Eq(c => c.Title, query.Title);
                 }
                 if (!string.IsNullOrEmpty(query.Tag))
                 {
-                    filter = Builders<Conspect>.Filter.Eq(c => c.Tag, query.Tag);
+                    filter = filter & Builders<Conspect>.Filter.Eq(c => c.Tag, query.Tag);
                 }
 
-                return await _database.Conspects.Find(filter).ToListAsync();
+                var conspects = await _database.Conspects.Find(filter).ToListAsync();
+        
+            foreach (var conspect in conspects)
+            {
+                var commentFilter = Builders<Comment>.Filter.Eq(c => c.ConspectId, conspect.Id);
+                var comments = await _database.Comments.Find(commentFilter).ToListAsync();
+                conspect.Comments = comments;
+            }
+
+            return conspects;
             }
             catch(Exception ex)
             {
                 _logger.LogError(ex, "Error while retrieving all conspects");
                 return new List<Conspect>();
             }
-        }
+}
 
         public async Task<Conspect?> GetById(string id)
         {
             try
             {
-                return await  _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+                var conspect = await _database.Conspects.Find(c => c.Id == id).FirstOrDefaultAsync();
+        
+                if (conspect != null)
+                {
+                    var commentFilter = Builders<Comment>.Filter.Eq(c => c.ConspectId, conspect.Id);
+                    var comments = await _database.Comments.Find(commentFilter).ToListAsync();
+                    conspect.Comments = comments;
+                }
+
+                return conspect;
             }
             catch(Exception ex)
             {
                 _logger.LogError(ex, "Error while retrieving conspect by Id");
                 return null;
             }
-        }
+}
 
         public async Task<Conspect?> Update(string id, UpdateConspectDto conspectDto)
         {
