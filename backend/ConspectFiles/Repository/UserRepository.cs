@@ -43,7 +43,7 @@ namespace ConspectFiles.Repository
             return userModel;
         }
 
-        public async Task<AppUser?> CreateAsync(RegisterDto register)
+        public async Task<AppUser?> CreateAsync(RegisterDto register, string refreshToken)
         {
             var existUser = await _users.Find(u => 
             u.UserName == register.UserName).FirstOrDefaultAsync();
@@ -56,7 +56,9 @@ namespace ConspectFiles.Repository
             {
                 Id = ObjectId.GenerateNewId().ToString(),
                 UserName = register.UserName,
-                PasswordHash = RegisterPasswordHash
+                PasswordHash = RegisterPasswordHash,
+                RefreshToken = refreshToken
+                
             };
             await _users.InsertOneAsync(newUser);
             return newUser;
@@ -87,9 +89,19 @@ namespace ConspectFiles.Repository
             return userModel;
         }
 
-        public Task<AppUser?> LoginAsync(LoginDto login)
+        public async Task<AppUser?> GetUserByRefreshToken(RefreshTokenDto tokenModel)
         {
-            throw new NotImplementedException();
+            return await _users.Find(u => u.RefreshToken == tokenModel.RefreshToken).FirstOrDefaultAsync();
+        }
+
+        public async Task SaveRefreshTokenAsync(string userId, string refreshToken)
+        {
+            var userModel = await _users.Find(u => u.Id == userId).FirstOrDefaultAsync();
+            if(userModel != null)
+            {
+                userModel.RefreshToken = refreshToken;
+                await _users.ReplaceOneAsync(u => u.Id == userId, userModel);
+            }
         }
     }
 }

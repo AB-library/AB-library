@@ -7,11 +7,18 @@ using System.Text;
 using ConspectFiles.Interface;
 using ConspectFiles.Repository;
 using ConspectFiles.Model;
+using ConspectFiles.Services;
 
-DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {"..\\.env"}));
+DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {".env"}));
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
+Console.WriteLine();
+Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
+Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
+Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
+Console.WriteLine($"MONGO_DATABASE: {configuration["MONGO_DATABASE"]}");
+Console.WriteLine($"MONGO_CONNECTION_STRING: {configuration["MONGO_CONNECTION_STRING"]}");
 
-
+Console.WriteLine();
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +56,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IConspectRepository, ConspectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 
 var app = builder.Build();

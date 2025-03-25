@@ -24,15 +24,17 @@ using System.Text;
 
 namespace ConspectFiles.Controller
 {
-    [Route("conspectFiles/identification")]
+    [Route("api/identification")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
+        private readonly ITokenService _tokenService;
 
-        public UserController(IUserRepository userRepo)
+        public UserController(IUserRepository userRepo, ITokenService tokenService)
         {
             _userRepo = userRepo;
+            _tokenService = tokenService;
         }
 
 
@@ -47,13 +49,26 @@ namespace ConspectFiles.Controller
                     return BadRequest(ModelState);
                 }
 
-                var userModel = await _userRepo.CreateAsync(newUser);
+
+                var refreshToken = _tokenService.GenerateRefreshToken();
+
+                var userModel = await _userRepo.CreateAsync(newUser, refreshToken);
                 if (userModel == null)
                 {
                     return BadRequest("User already exists.");
                 }
+                
+                var token = _tokenService.GenerateJwtToken(userModel);
+                
 
-                return CreatedAtAction(nameof(GetById), new { id = userModel.Id }, userModel.ToUserDto());
+                return Ok(
+                    new NewUserDto
+                    {
+                        Username = newUser.UserName,
+                        Token = token,
+                        RefreshToken = refreshToken
+                    }
+                );
             }
             catch (Exception ex)
             {
@@ -124,9 +139,15 @@ namespace ConspectFiles.Controller
                     return Unauthorized("Invalid username or password.");
                 }
 
-                var token = GenerateJwToken(userModel);
-
-                return Ok(new { Token = token, User = userModel.ToUserDto() });
+                return Ok(
+                    new NewUserDto
+                    {
+                        Username = userModel.UserName,
+                        Token = _tokenService.GenerateJwtToken(userModel),
+                        RefreshToken = userModel.RefreshToken
+                        
+                    }
+                );
             }
             catch (Exception ex)
             {
@@ -144,52 +165,34 @@ namespace ConspectFiles.Controller
         }
 
 
+        
 
-
-        //Cтворення JWT токена
-        private string GenerateJwToken(AppUser user)
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDto refreshToken)
         {
-            try
+            var userModel = await _userRepo.GetUserByRefreshToken(refreshToken);
+            if(userModel == null)
             {
-                var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET");
-                var jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER");
-                var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");
-
-                if (string.IsNullOrEmpty(jwtSecret) || string.IsNullOrEmpty(jwtIssuer) || string.IsNullOrEmpty(jwtAudience))
-                {
-                    throw new InvalidOperationException("JWT environment variables are not properly configured.");
-                }
-
-                var key = Encoding.ASCII.GetBytes(jwtSecret);
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id),
-                    new Claim(ClaimTypes.Name, user.UserName)
-                };
-
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.UtcNow.AddHours(3),
-                    Issuer = jwtIssuer,
-                    Audience = jwtAudience,
-                    SigningCredentials = new SigningCredentials(
-                        new SymmetricSecurityKey(key),
-                        SecurityAlgorithms.HmacSha256Signature)
-                };
-
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-
-                return tokenHandler.WriteToken(token);
+                return BadRequest("Invalid refresh token.");
             }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Error generating JWT token.", ex);
-            }
+
+
+            var newAccessToken = _tokenService.GenerateJwtToken(userModel);
+            var newRefreshToken = _tokenService.GenerateRefreshToken();
+
+            await _userRepo.SaveRefreshTokenAsync(userModel.Id, newRefreshToken);
+            
+            return Ok(new{
+                Token = newAccessToken,
+                RefreshToken = newRefreshToken
+            });
+
         }
 
 
+
+
+    
 
 
     }
