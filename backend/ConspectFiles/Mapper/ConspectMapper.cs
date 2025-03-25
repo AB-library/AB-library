@@ -13,7 +13,9 @@ namespace ConspectFiles.Mapper
                 Title = conspectModel.Title,
                 Content = conspectModel.Content,
                 Tag = conspectModel.Tag,
+                IsDraft = conspectModel.IsDraft,
                 CreatedOn = conspectModel.CreatedOn,
+                PublishedOn = conspectModel.PublishedOn,
                 Comments = conspectModel.Comments.Select(c=>c.ToCommentDto()).ToList()
             };
         }
@@ -24,7 +26,8 @@ namespace ConspectFiles.Mapper
             {
                 Title = conspectDto.Title,
                 Content = conspectDto.Content,
-                Tag = conspectDto.Tag
+                Tag = conspectDto.Tag,
+                IsDraft = conspectDto.IsDraft
             };
         }
     }

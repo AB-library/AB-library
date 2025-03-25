@@ -9,5 +9,6 @@ namespace ConspectFiles.Helpers
     {
         public string? Title { get; set; } = null;
         public string? Tag { get; set; } = null;
+        public bool? ShowOnlyDrafts { get; set; }
     }
 }

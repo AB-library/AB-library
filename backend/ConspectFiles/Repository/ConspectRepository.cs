@@ -28,6 +28,10 @@ namespace ConspectFiles.Repository
         {
             try
             {
+                if(conspectModel.IsDraft)
+                {
+                    conspectModel.PublishedOn = null;
+                }
                 await _database.Conspects.InsertOneAsync(conspectModel);
                 return conspectModel;
             }
@@ -70,6 +74,10 @@ namespace ConspectFiles.Repository
                 if (!string.IsNullOrEmpty(query.Tag))
                 {
                     filter = filter & Builders<Conspect>.Filter.Eq(c => c.Tag, query.Tag);
+                }
+                if(query.ShowOnlyDrafts.HasValue)
+                {
+                    filter = filter & Builders<Conspect>.Filter.Eq(c=>c.IsDraft, query.ShowOnlyDrafts.Value);
                 }
 
                 var conspects = await _database.Conspects.Find(filter).ToListAsync();
@@ -116,16 +124,23 @@ namespace ConspectFiles.Repository
         {
             try
             {
-               var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
-            if(conspect == null)
-            {
-                return null;
-            }
-            conspect.Title = conspectDto.Title;
-            conspect.Content = conspectDto.Content;
-            conspect.Tag = conspectDto.Tag;
-            await _database.Conspects.ReplaceOneAsync(c => c.Id == id, conspect);
-            return conspect; 
+                var conspect = await _database.Conspects.Find(c=>c.Id == id).FirstOrDefaultAsync();
+                if(conspect == null)
+                {
+                    return null;
+                }
+                conspect.Title = conspectDto.Title;
+                conspect.Content = conspectDto.Content;
+                conspect.Tag = conspectDto.Tag;
+                if(conspectDto.IsDraft.HasValue)
+                {
+                    if(conspectDto.IsDraft == true)
+                    {
+                        conspect.PublishedOn = DateTime.Now;
+                    }
+                }
+                await _database.Conspects.ReplaceOneAsync(c => c.Id == id, conspect);
+                return conspect; 
             }
             catch(Exception ex)
             {

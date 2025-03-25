@@ -12,7 +12,9 @@ namespace ConspectFiles.Dto
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
         public string Tag { get; set; } = string.Empty;
+        public bool IsDraft { get; set; } = false;
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public DateTime? PublishedOn {get;set;}
         public List<CommentDto> Comments{get; set;} = new();
     }
 }

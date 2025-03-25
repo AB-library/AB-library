@@ -53,6 +53,7 @@ namespace ConspectFiles.Controller
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateConspectDto conspectDto)
         {
+            conspectDto.IsDraft = conspectDto.IsDraft;
             var conspect = conspectDto.ToConspectFromCreateDto();
             await _conspectRepo.Create(conspect);
              return CreatedAtAction(nameof(GetById), new { id = conspect.Id }, conspect.ToConspectDto());
@@ -89,6 +90,15 @@ namespace ConspectFiles.Controller
                 return NotFound();
             }
             return NoContent();
+        }
+        [HttpGet("drafts")]
+        public async Task<IActionResult> GetDrafts()
+        {
+            var query = new QueryObject{ShowOnlyDrafts = true};
+            var drafts = await _conspectRepo.GetAll(query);
+            var dto = drafts.Select(d=>d.ToConspectDto());
+            return Ok(dto);
+
         }
 
         

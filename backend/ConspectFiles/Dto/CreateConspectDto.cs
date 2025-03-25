@@ -20,6 +20,8 @@ namespace ConspectFiles.Dto
         [MinLength(2, ErrorMessage = "Tag must be 2 characters")]
         [MaxLength(20, ErrorMessage ="Tag can not be over 20 characters")]
         public string Tag { get; set; } = string.Empty;
+        public bool IsDraft { get; set; } = false;
+
 
     }
 }

@@ -17,10 +17,11 @@ namespace ConspectFiles.Model
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
         public string Tag { get; set; } = string.Empty;
+        public bool IsDraft { get; set; } = false;
 
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public DateTime? PublishedOn {get;set;}
         public List<Comment> Comments = new List<Comment>();
-        internal static RenderArgs<Conspect> DocumentSerializer;
     }
 }
