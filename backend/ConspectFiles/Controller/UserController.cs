@@ -21,11 +21,13 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MongoDB.Driver.Core.Operations;
 
 namespace ConspectFiles.Controller
 {
     [Route("api/identification")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
@@ -40,7 +42,8 @@ namespace ConspectFiles.Controller
 
         //регестрація
         [HttpPost("register")]
-        public async Task<IActionResult> Registration([FromBody] RegisterDto newUser)
+        [AllowAnonymous]
+        public async Task<IActionResult> Registration([FromBody] UserRegisterDto newUser)
         {
             try
             {
@@ -48,7 +51,6 @@ namespace ConspectFiles.Controller
                 {
                     return BadRequest(ModelState);
                 }
-
 
                 var refreshToken = _tokenService.GenerateRefreshToken();
 
@@ -66,7 +68,8 @@ namespace ConspectFiles.Controller
                     {
                         Username = newUser.UserName,
                         Token = token,
-                        RefreshToken = refreshToken
+                        RefreshToken = refreshToken,
+                        Role = newUser.Role
                     }
                 );
             }
@@ -79,6 +82,7 @@ namespace ConspectFiles.Controller
 
         //Cписок користувачів
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
         {
             var users = await _userRepo.GetAllAsync();
@@ -89,6 +93,7 @@ namespace ConspectFiles.Controller
 
         //Видалення
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
             try
@@ -105,6 +110,21 @@ namespace ConspectFiles.Controller
             {
                 return StatusCode(500, new { Message = "An error occurred while deleting the user.", Error = ex.Message });
             }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] USerUpdateDto updateDto, [FromRoute] string id)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(updateDto);
+            }
+            var userModel = await _userRepo.UpdateAsync(updateDto, id);
+            if(userModel == null)
+            {
+                return NotFound("Invalid user id");
+            }
+            return Ok(userModel.ToUserDto());
         }
 
 
@@ -124,7 +144,8 @@ namespace ConspectFiles.Controller
 
         //Вхід
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] UserLoginDto loginDto)
         {
             try
             {
@@ -168,6 +189,7 @@ namespace ConspectFiles.Controller
         
 
         [HttpPost("refresh-token")]
+        [AllowAnonymous]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDto refreshToken)
         {
             var userModel = await _userRepo.GetUserByRefreshToken(refreshToken);
@@ -183,17 +205,11 @@ namespace ConspectFiles.Controller
             await _userRepo.SaveRefreshTokenAsync(userModel.Id, newRefreshToken);
             
             return Ok(new{
+                userModel.UserName,
                 Token = newAccessToken,
                 RefreshToken = newRefreshToken
             });
 
         }
-
-
-
-
-    
-
-
     }
 }

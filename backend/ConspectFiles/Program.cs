@@ -11,14 +11,7 @@ using ConspectFiles.Services;
 
 DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {".env"}));
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
-Console.WriteLine();
-Console.WriteLine($"JWT_SECRET: {configuration["JWT_SECRET"]}");
-Console.WriteLine($"JWT_ISSUER: {configuration["JWT_ISSUER"]}");
-Console.WriteLine($"JWT_AUDIENCE: {configuration["JWT_AUDIENCE"]}");
-Console.WriteLine($"MONGO_DATABASE: {configuration["MONGO_DATABASE"]}");
-Console.WriteLine($"MONGO_CONNECTION_STRING: {configuration["MONGO_CONNECTION_STRING"]}");
 
-Console.WriteLine();
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,9 +40,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = configuration["JWT_ISSUER"],
             ValidAudience = configuration["JWT_AUDIENCE"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT_SECRET"]))
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(configuration["JWT_SECRET"]))
         };
     });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => 
+        policy.RequireRole("Admin"));
+    
+    options.AddPolicy("UserManagement", policy => 
+        policy.RequireRole("Admin", "SuperAdmin"));
+});
+
 
 builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();

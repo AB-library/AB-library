@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConspectFiles.Dto.AppUSer
 {
-    public class LoginDto
+    public class UserLoginDto
     {
         [Required]
         [StringLength(30, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 30 characters.")]

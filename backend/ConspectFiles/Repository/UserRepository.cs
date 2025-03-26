@@ -26,7 +26,7 @@ namespace ConspectFiles.Repository
             _users = users;
         }
 
-        public async Task<AppUser?> AuthenticateAsync(LoginDto loginDto)
+        public async Task<AppUser?> AuthenticateAsync(UserLoginDto loginDto)
         {
             var userModel = await _users.Find(u => u.UserName == loginDto.UserName).FirstOrDefaultAsync();
             
@@ -43,7 +43,7 @@ namespace ConspectFiles.Repository
             return userModel;
         }
 
-        public async Task<AppUser?> CreateAsync(RegisterDto register, string refreshToken)
+        public async Task<AppUser?> CreateAsync(UserRegisterDto register, string refreshToken)
         {
             var existUser = await _users.Find(u => 
             u.UserName == register.UserName).FirstOrDefaultAsync();
@@ -57,7 +57,8 @@ namespace ConspectFiles.Repository
                 Id = ObjectId.GenerateNewId().ToString(),
                 UserName = register.UserName,
                 PasswordHash = RegisterPasswordHash,
-                RefreshToken = refreshToken
+                RefreshToken = refreshToken,
+                Role = register.Role
                 
             };
             await _users.InsertOneAsync(newUser);
@@ -102,6 +103,24 @@ namespace ConspectFiles.Repository
                 userModel.RefreshToken = refreshToken;
                 await _users.ReplaceOneAsync(u => u.Id == userId, userModel);
             }
+        }
+
+        public async Task<AppUser?> UpdateAsync(USerUpdateDto updateDto, string id)
+        {
+            var userModel = await _users.Find(u => u.Id == id).FirstOrDefaultAsync();
+            if(userModel == null)
+            {
+                return null;
+            }
+            userModel.UserName = updateDto.UserName;
+            userModel.Role = updateDto.Role;
+            await _users.ReplaceOneAsync(u => u.Id == id, userModel);
+            
+            return userModel;
+
+
+            
+            
         }
     }
 }

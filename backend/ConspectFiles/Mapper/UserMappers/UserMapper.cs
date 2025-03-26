@@ -14,7 +14,8 @@ namespace ConspectFiles.Mapper.UserMappers
             return new UserDto
             {
                 Id = appUser.Id,
-                UserName = appUser.UserName
+                UserName = appUser.UserName,
+                Role = appUser.Role
             };
         }
     }

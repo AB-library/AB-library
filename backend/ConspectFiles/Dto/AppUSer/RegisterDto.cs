@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using ConspectFiles.Helpers;
 
 namespace ConspectFiles.Dto.AppUSer
 {
-    public class RegisterDto
+    public class UserRegisterDto
     {
         [Required]
         [StringLength(30, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 30 characters.")]
@@ -15,6 +16,10 @@ namespace ConspectFiles.Dto.AppUSer
         [MinLength(8, ErrorMessage = "Password must be least 8 characters long.")]
         [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$", ErrorMessage = "Password must contain at least one letter and one number.")]
         public string PasswordHash {get; set;} = string.Empty;
+
+        [Required]
+        [EnumDataType(typeof(RoleEnum), ErrorMessage = "Invalid role.")]
+        public string Role { get; set; } = "User";
 
     }
 }
