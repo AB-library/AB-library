@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid #eee;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .logo img {
+    width: 30px;
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .icon-button:hover {
+    color: #189ea5;
+  }
+
+  .icon-button:disabled {
+    cursor: not-allowed;
+  }
+  
+  .icon-button:disabled:hover {
+    color: red; 
+  }
