@@ -15,6 +15,7 @@ namespace ConspectFiles.Mapper.UserMappers
             {
                 Id = appUser.Id,
                 UserName = appUser.UserName,
+                Email = appUser.Email,
                 Role = appUser.Role
             };
         }

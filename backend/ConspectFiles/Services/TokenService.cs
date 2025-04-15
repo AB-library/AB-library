@@ -26,9 +26,10 @@ namespace ConspectFiles.Services
                 var key = Encoding.ASCII.GetBytes(jwtSecret);
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id),
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.Role, user.Role)
+                    new Claim(ClaimTypes.NameIdentifier, user.Id ?? string.Empty),
+                    new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
+                    new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
+                    new Claim(ClaimTypes.Role, user.Role ?? "User")
                 };
 
                 var tokenDescriptor = new SecurityTokenDescriptor

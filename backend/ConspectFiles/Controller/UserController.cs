@@ -1,27 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ConspectFiles.Data;
-using ConspectFiles.Repository;
 using ConspectFiles.Interface;
-using System.Net.Http.Headers;
-using MongoDB.Driver;
-using ConspectFiles.Mapper;
-using ConspectFiles.Dto;
-using ConspectFiles.Model;
 using ConspectFiles.Dto.AppUSer;
-using Microsoft.VisualBasic;
-using Newtonsoft.Json.Serialization;
 using ConspectFiles.Mapper.UserMappers;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Configuration;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using MongoDB.Driver.Core.Operations;
 
 namespace ConspectFiles.Controller
 {
@@ -68,6 +49,7 @@ namespace ConspectFiles.Controller
                     {
                         Username = newUser.UserName,
                         Token = token,
+                        Email = newUser.Email,
                         RefreshToken = refreshToken,
                         Role = newUser.Role
                     }
@@ -164,8 +146,10 @@ namespace ConspectFiles.Controller
                     new NewUserDto
                     {
                         Username = userModel.UserName,
+                        Email = userModel.Email,
                         Token = _tokenService.GenerateJwtToken(userModel),
-                        RefreshToken = userModel.RefreshToken
+                        RefreshToken = userModel.RefreshToken,
+                        Role = userModel.Role
                         
                     }
                 );
@@ -179,14 +163,14 @@ namespace ConspectFiles.Controller
 
         //Вихід
         [HttpPost("logout")]
-        // [Authorize]
+        [Authorize]
         public IActionResult Logout() //Не знаю як зробити вихід
         {
             return Ok(new { Message = "Loggout successful" });
         }
 
 
-        
+
 
         [HttpPost("refresh-token")]
         [AllowAnonymous]
@@ -197,7 +181,7 @@ namespace ConspectFiles.Controller
             {
                 return BadRequest("Invalid refresh token.");
             }
-
+            
 
             var newAccessToken = _tokenService.GenerateJwtToken(userModel);
             var newRefreshToken = _tokenService.GenerateRefreshToken();
@@ -206,8 +190,10 @@ namespace ConspectFiles.Controller
             
             return Ok(new{
                 userModel.UserName,
+                userModel.Email,
                 Token = newAccessToken,
-                RefreshToken = newRefreshToken
+                RefreshToken = newRefreshToken,
+                userModel.Role
             });
 
         }

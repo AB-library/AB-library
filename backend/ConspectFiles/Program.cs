@@ -1,13 +1,19 @@
-using dotenv.net;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using MongoDB.Driver;
 using ConspectFiles.Data;
 using System.Text;
 using ConspectFiles.Interface;
 using ConspectFiles.Repository;
 using ConspectFiles.Model;
 using ConspectFiles.Services;
+using dotenv.net;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
 
 DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] {".env"}));
 var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
@@ -19,7 +25,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddControllers();
 
 builder.Services.AddSingleton<MongoDbService>();
 

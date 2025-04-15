@@ -56,10 +56,10 @@ namespace ConspectFiles.Repository
             {
                 Id = ObjectId.GenerateNewId().ToString(),
                 UserName = register.UserName,
+                Email = register.Email,
                 PasswordHash = RegisterPasswordHash,
                 RefreshToken = refreshToken,
                 Role = register.Role
-                
             };
             await _users.InsertOneAsync(newUser);
             return newUser;
