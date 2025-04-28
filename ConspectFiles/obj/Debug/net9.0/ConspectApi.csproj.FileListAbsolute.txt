@@ -1,0 +1,209 @@
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\appsettings.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.staticwebassets.endpoints.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.exe
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.deps.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.runtimeconfig.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\AWSSDK.Core.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\AWSSDK.SecurityToken.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\DnsClient.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\dotenv.net.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.Core.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\MongoDB.Libmongocrypt.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\SharpCompress.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\Snappier.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\ZstdSharp.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\bin\Debug\net9.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.AssemblyReference.cache
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfoInputs.cache
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfo.cs
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.CoreCompileInputs.cache
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.sourcelink.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\scopedcss\bundle\ConspectApi.styles.css
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.build.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\Conspect.7C74C715.Up2Date
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\refint\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ConspectApi.genruntimeconfig.cache
+C:\Users\Aleks1G\Project_Abramov\backend\ConspectFiles\obj\Debug\net9.0\ref\ConspectApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\appsettings.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.staticwebassets.endpoints.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.exe
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.deps.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.runtimeconfig.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\AWSSDK.Core.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\AWSSDK.SecurityToken.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\DnsClient.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\dotenv.net.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.Core.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\MongoDB.Libmongocrypt.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\SharpCompress.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\Snappier.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\ZstdSharp.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\bin\Debug\net9.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.AssemblyReference.cache
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfoInputs.cache
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfo.cs
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.CoreCompileInputs.cache
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\scopedcss\bundle\ConspectApi.styles.css
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.build.ConspectApi.props
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.ConspectApi.props
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.ConspectApi.props
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\Conspect.7C74C715.Up2Date
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\refint\ConspectApi.dll
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ConspectApi.genruntimeconfig.cache
+C:\Users\Aleks1G\OneDrive\Рабочий стол\Project_merge\ConspectFiles\obj\Debug\net9.0\ref\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\appsettings.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.staticwebassets.endpoints.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.exe
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.deps.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.runtimeconfig.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\AWSSDK.Core.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\AWSSDK.SecurityToken.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\DnsClient.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\dotenv.net.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\MongoDB.Driver.Core.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\MongoDB.Libmongocrypt.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\SharpCompress.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\Snappier.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\ZstdSharp.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\bin\Debug\net9.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.AssemblyReference.cache
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfoInputs.cache
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.AssemblyInfo.cs
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.csproj.CoreCompileInputs.cache
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.sourcelink.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\scopedcss\bundle\ConspectApi.styles.css
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.ConspectApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.build.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.ConspectApi.props
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\Conspect.7C74C715.Up2Date
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\refint\ConspectApi.dll
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.pdb
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ConspectApi.genruntimeconfig.cache
+C:\Users\Aleks1G\Project_Abramov\ConspectFiles\obj\Debug\net9.0\ref\ConspectApi.dll
