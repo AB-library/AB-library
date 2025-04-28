@@ -10,7 +10,7 @@ namespace ConspectFiles.Data
         private readonly IMongoCollection<AppUser> _users;
         public MongoDbService(IConfiguration configuration)
         {
-            _client = new MongoClient(configuration["MONGO_CONNECTION_STRING"]);
+            _client = new MongoClient(configuration["MONGO_CONNECTION_STRING"]);        
             _database = _client.GetDatabase(configuration["MONGO_DATABASE_NAME"]);
             _users = _database.GetCollection<AppUser>("users");
         }
