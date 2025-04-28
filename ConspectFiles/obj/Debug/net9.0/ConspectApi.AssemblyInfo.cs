@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConspectApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c4941621c73e5e2a851664d6c5f5fb91dcecfee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6ad2c2614546e6557ed377233d38c7c555fbf4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConspectApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConspectApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
