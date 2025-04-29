@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "6BzJxCoZYoERbvuAw0WvSGRcGpAn8zWH+2bmDAb4QpU=",
+  "Source": "ConspectApi",
+  "BasePath": "_content/ConspectApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
